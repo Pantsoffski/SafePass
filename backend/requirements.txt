@@ -1,0 +1,6 @@
+uvicorn
+pydantic
+groq
+duckduckgo-search
+streamlit
+tavily-python
