@@ -1,8 +1,10 @@
-# 🌍 SafePass: Global Safety Agent
+# 🌍 SafePass: Global Safety Agent [![Try it Live](https://img.shields.io/badge/Try%20it%20Live-Hugging%20Face%20Space-FCD21D?logo=huggingface)](https://huggingface.co/spaces/Pantsoffski/SafePass)
 
-[![Try it Live](https://img.shields.io/badge/Try%20it%20Live-Hugging%20Face%20Space-FCD21D?logo=huggingface)](https://huggingface.co/spaces/Pantsoffski/SafePass)
-
-![SafePass App Screenshot](images/image.png)
+<div align="center">
+  <a href="images/image.png">
+    <img src="images/image.png" alt="App Screenshot" height="600">
+  </a>
+</div>
 
 SafePass is an autonomous AI Agent built with Streamlit that provides real-time, context-aware travel safety reports. By utilizing advanced OSINT (Open Source Intelligence) techniques, it analyzes official government advisories and current global news to generate professional risk assessments.
 
