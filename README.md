@@ -1,5 +1,7 @@
 # 🌍 SafePass: Global Safety Agent
 
+[![Try it Live](https://img.shields.io/badge/Try%20it%20Live-Hugging%20Face%20Space-FCD21D?logo=huggingface)](https://huggingface.co/spaces/Pantsoffski/SafePass)
+
 ![SafePass App Screenshot](images/image.png)
 
 SafePass is an autonomous AI Agent built with Streamlit that provides real-time, context-aware travel safety reports. By utilizing advanced OSINT (Open Source Intelligence) techniques, it analyzes official government advisories and current global news to generate professional risk assessments.
@@ -35,7 +37,7 @@ To run this AI Agent locally on your machine:
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/YourUsername/SafePass.git](https://github.com/YourUsername/SafePass.git)
+   git clone [https://github.com/Pantsoffski/SafePass.git](https://github.com/Pantsoffski/SafePass.git)
    cd SafePass
    ```
 
