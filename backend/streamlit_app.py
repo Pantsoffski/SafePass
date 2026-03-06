@@ -57,35 +57,37 @@ st.set_page_config(page_title="SafePass", page_icon="🌍", layout="centered")
 
 st.title("🌍 SafePass: Global Safety Agent")
 st.markdown("Real-time travel safety analysis powered by autonomous agents.")
-st.markdown("---")
 
 # Check for API Keys
 if not os.environ.get("GROQ_KEY") or not os.environ.get("TAVILY_KEY"):
     st.error("⚠️ Missing API Keys! Please set GROQ_KEY and TAVILY_KEY environment variables.")
     st.stop()
 
-# Sidebar for User Context
-st.sidebar.header("🛂 Traveler Profile")
-origin_country = st.sidebar.text_input("Origin Country", value="Poland", placeholder="Where are you from?")
-travel_date = st.sidebar.date_input("Planned Travel Date", min_value=datetime.now())
+# Traveler Profile Section (Moved from sidebar to main page)
+st.subheader("🛂 Traveler Profile")
 
-st.sidebar.markdown("---")
-st.sidebar.info(
-    "This agent analyzes official government advisories and real-time news to provide a consolidated safety report."
-)
+col_profile1, col_profile2 = st.columns(2)
+with col_profile1:
+    origin_country = st.text_input("Origin Country", value="USA", placeholder="Where are you from?")
+with col_profile2:
+    travel_date = st.date_input("Planned Travel Date", min_value=datetime.now())
 
-# Main Content
-col1, col2 = st.columns(2)
-with col1:
+st.info("This agent analyzes official government advisories and real-time news to provide a consolidated safety report.")
+
+# Destination Section
+st.subheader("📍 Destination")
+
+col_dest1, col_dest2 = st.columns(2)
+with col_dest1:
     destination = st.text_input("Destination Country", placeholder="e.g. Israel, Thailand, Ukraine")
-with col2:
+with col_dest2:
     specific_city = st.text_input("Specific City/Region (Optional)", placeholder="e.g. Bangkok, Tel Aviv")
 
-if st.button("Generate Safety Report 🛡️"):
+if st.button("Generate Safety Report 🛡️", use_container_width=True):
     if not destination or not origin_country:
         st.warning("Please provide both Origin and Destination countries.")
     else:
-        with st.spinner(f"Agent is analyzing safety for {destination}..."):
+        with st.spinner(f"Analyzing safety for {destination}..."):
             try:
                 system_prompt = (
                     "You are a professional Global Safety & Intelligence Agent.\n"
@@ -172,5 +174,6 @@ if st.button("Generate Safety Report 🛡️"):
             except Exception as e:
                 st.error(f"An error occurred: {e}")
 
-st.markdown("---")
-st.caption("Disclaimer: This tool provides autonomous agent-generated summaries. Always verify with official government sources before traveling.")
+# Disclaimer placed at the very bottom of the page
+st.markdown("<br><br>", unsafe_allow_html=True)
+st.caption("⚠️ **Disclaimer:** This tool provides autonomous agent-generated summaries. Always verify with official government sources before traveling.")
